@@ -59,7 +59,6 @@
       <p class="social">@wesbos</p>
     </div>
   </div>
-
   <script>
     const box = document.querySelector('.box');
     box.addEventListener('click', function() {
@@ -69,7 +68,7 @@
       if(this.classList.contains(first)) {
         [first, second] = [second, first];
       }
-
+//arrow functions inherit the value of 'this'
       this.classList.toggle(first);
       setTimeout(() => {
         console.log(this);

@@ -7,23 +7,23 @@
 <body>
 <script>
   const names = ['wes', 'kait', 'lux'];
-
+//this is a traditional function
   const fullNames = names.map(function(name) {
     return `${name} bos`;
   });
-
+//this is an arrow function
   const fullNames2 = names.map((name) => {
     return `${name} bos`;
   });
-
+//single parameter arrow functions do not require parens around the parameter but you can use them if desired
   const fullNames3 = names.map(name => {
     return `${name} bos`;
   });
-
+//arrow functions are implicit so they return without having to use 'return' - curly braces were removed
   const fullNames4 = names.map(name => `${name} bos`);
-
+//this is an arrow function with no arguments
   const fullNames5 = names.map(() => `cool bos`);
-
+//currently all arrow functions are anonymous but you can still put them in variables
   const sayMyName = (name) => {
     alert(`Hello ${name}!`)
   }

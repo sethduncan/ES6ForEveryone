@@ -6,9 +6,12 @@
 </head>
 <body>
 <script>
+  //you can set default parameter values when defining params in ES6 - if nothing is passed in the defaults will be assumed
   function calculateBill(total, tax = 0.13, tip = 0.15) {
     return total + (total * tax) + (total * tip);
   }
+
+  //instead of tax = tax || 0.13
 
   const totalBill = calculateBill(100, undefined, 0.25);
   console.log(totalBill);
