@@ -11,8 +11,10 @@
 </head>
 <body>
 <script>
+  //If the last named argument of a function is prefixed with //..., it becomes an array whose elements from 0 (inclusive) //to theArgs.length (exclusive) are supplied by the actual //arguments passed to the function.
   function highlight(strings, ...values) {
     let str = '';
+    //the array of strings will always be one higher than the //array of values or arguments
     strings.forEach((string, i) => {
       str += `${string} <span contenteditable class="hl">${values[i] || ''}</span>`;
     });
@@ -21,7 +23,7 @@
 
   const name = 'Snickers';
   const age = 100;
-
+//The template is tagged here
   const sentence = highlight`My dog's name is ${name} and he is ${age} years old`;
   document.body.innerHTML = sentence;
   console.log(sentence);

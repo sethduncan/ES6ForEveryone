@@ -16,6 +16,19 @@
   </div>
 
 <script>
+  function abbreviation(strings, ...values) {
+    const abbreviated = values.map( value => {
+      if(dict[value]) {
+        return `<abbr title="${dict[value]}">${value}</abbr>`
+      }
+      return value;
+    });
+
+    return strings.reduce((sentence, string, i) => {
+      return sentence + string + (abbreviated[i] || '');
+    }, '');
+  }
+
   const dict = {
     HTML: 'Hyper Text Markup Language',
     CSS: 'Cascading Style Sheets',
@@ -24,6 +37,12 @@
 
   const first = 'Wes';
   const last = 'Bos';
+
+  const sentence = abbreviation`My name is ${first} ${last} and I like to code ${'HTML'}, ${'CSS'}, and ${'JS'}.`;
+  const bio = document.querySelector('.bio');
+  const p = document.createElement('p');
+  p.innerHTML = sentence;
+  bio.appendChild(p);
 
 </script>
 </body>
